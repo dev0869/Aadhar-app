@@ -15,7 +15,6 @@ const initialFormData = {
 function Form({ onSubmit }) {
   const [formData, setFormData] = useState(initialFormData);
 
-  // Function to handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -24,16 +23,16 @@ function Form({ onSubmit }) {
     });
   };
 
-  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
-    setFormData(initialFormData); // Reset form after submission
+    setFormData(initialFormData); 
   };
 
   return (
     <div className="form-container">
       <h2>Kindly Enter Your Details</h2>
+      <br />
       <form onSubmit={handleSubmit}>
         <label>
           Name:
@@ -48,11 +47,13 @@ function Form({ onSubmit }) {
           <input type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleChange} required />
         </label>
         <div className='form-address'>
-            <div></div>
-        <label>
+            <div className='container'> 
+
+        <label >
           Address:
           <input type="text" name="address" value={formData.address} onChange={handleChange} required />
         </label>
+            </div>
         <label>
           Locality:
           <input type="text" name="locality" value={formData.locality} onChange={handleChange} required />
@@ -77,7 +78,6 @@ function Form({ onSubmit }) {
   );
 }
 
-// PropTypes validation for onSubmit function
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
