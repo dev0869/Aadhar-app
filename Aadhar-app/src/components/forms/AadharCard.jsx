@@ -5,7 +5,7 @@ const AadharCard = ({ userInfo, uid }) => {
       <div className="aadhar-container">
         <div className="imgAdhar">
           <img
-            src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"
+            src="https://img.freepik.com/premium-photo/graphic-designer-digital-avatar-generative-ai_934475-9292.jpg"
             alt=""
           />
         </div>
@@ -20,18 +20,17 @@ const AadharCard = ({ userInfo, uid }) => {
             <strong>Date of Birth:</strong> {userInfo.dateOfBirth}
           </p>
           <p>
-            <strong>Address:</strong> {userInfo.address}
+            <strong>Address:</strong> {userInfo.address} {userInfo.locality} {userInfo.state} {userInfo.pinCode}
           </p>
           <p>
             <strong>Contact Details:</strong> {userInfo.contactDetails}
           </p>
+          <div className="UUid-Section">
+            <p>{uid}</p>
+          </div>
         </div>
       </div>
-      <div>
-        <p>
-          <strong>UID:</strong> {uid}
-        </p>
-      </div>
+      <div></div>
     </div>
   );
 };

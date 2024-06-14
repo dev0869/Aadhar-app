@@ -4,5 +4,5 @@ export const generateUID = () => {
   const timestamp = new Date().getTime().toString(); 
   const uid = timestamp + uidCounter; 
   uidCounter++; 
-  return uid;
+  return uid.slice(0,16);
 };
